@@ -1,50 +1,752 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import '@fontsource-variable/inconsolata';
+import SEOLayout from '../components/SEOLayout.astro';
+import Cube from '../components/home/Cube.astro';
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header title={SITE_TITLE} />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to
-				build a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like
-				Tailwind, React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/pages/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-					>read the docs
-				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out <a
-					href="https://github.com/Charca/astro-blog-template"
-					>astro-blog-template
-				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-		</main>
-		<Footer />
-	</body>
-</html>
+<SEOLayout pageTitle="Agustin Jaralampidis | Front-end Developer">
+	<div class="home" id="home">
+		<Cube />
+		<div class="profile">
+			<div class="whiteSpace"></div>
+
+			<!-- <Icon name="simple-icons:github" /> -->
+
+			<div class="navbarContainer">
+				<nav class="navbar">
+					<button class="navElement" id="aboutMe" tabindex="0">
+						<span class="navElementIndicator"> &gt;</span> About me
+					</button>
+
+					<button class="navElement" id="webDevCV" tabindex="0">
+						<span class="navElementIndicator"> &gt;</span> Curriculum Vitae
+					</button>
+
+					<button class="navElement" id="contact" tabindex="0">
+						<span class="navElementIndicator"> &gt;</span> Contact Me !
+					</button>
+
+					<button
+						class="navElement onlyMobile"
+						id="arButton"
+						tabindex="0"
+						title="Only for devices that supports AR"
+					>
+						<span class="navElementIndicator"> &gt;</span> Augment Reality
+					</button>
+				</nav>
+			</div>
+		</div>
+	</div>
+</SEOLayout>
+
+<!-- styles -->
+<style>
+	/* width */
+	::-webkit-scrollbar {
+		width: 0px;
+		height: 0px;
+	}
+
+	/* Track */
+	::-webkit-scrollbar-track {
+		background: black;
+		border: 0px solid white;
+	}
+
+	/* Handle */
+	::-webkit-scrollbar-thumb {
+		background: rgb(221, 61, 32);
+	}
+
+	/* Handle on hover */
+	::-webkit-scrollbar-thumb:hover {
+		background: rgb(221, 61, 32);
+	}
+
+	html,
+	body {
+		width: 100vw;
+		height: 100vh;
+		background-color: rgb(221, 61, 32);
+		overflow: hidden;
+		margin: 0;
+	}
+
+	.home {
+		background-blend-mode: multiply, normal;
+		background-color: rgb(221, 61, 32);
+		background: url('/assets/perfil/perfil1.jpg'),
+			radial-gradient(circle, rgba(221, 61, 32, 1) 49%, rgba(177, 43, 19, 1) 100%);
+		background-repeat: no-repeat;
+		background-position: bottom;
+		background-size: 57vh, 100%;
+		height: 100vh;
+		width: 100vw;
+		overflow: hidden;
+		display: -ms-grid;
+		display: grid;
+		-ms-grid-rows: 40vh auto;
+		grid-template-rows: 40vh auto;
+
+		text-align: center;
+		color: white;
+		font-family: 'Inconsolata', Consolas, monaco, monospace;
+	}
+
+	a {
+		color: white;
+	}
+
+	a:hover {
+		color: rgb(221, 61, 32);
+	}
+
+	button {
+		color: white;
+		text-decoration: none;
+		background: none;
+		border-radius: 0;
+		width: unset;
+		border: none;
+		padding: 0;
+	}
+
+	button:disabled,
+	button.disabled {
+		color: lightgrey;
+		text-decoration: line-through;
+		cursor: not-allowed;
+	}
+
+	.profile {
+		height: 100%;
+		width: 100vw;
+		margin: auto;
+
+		display: -ms-grid;
+
+		display: grid;
+		-ms-grid-rows: 31vh auto;
+		grid-template-rows: 31vh auto;
+	}
+
+	.navbar {
+		/* border-radius: 3px; */
+		width: fit-content;
+		max-width: 350px;
+		/* max-width: 145px; */
+		margin: auto;
+		padding: 7px;
+		font-size: 1.2rem;
+		color: white;
+		background-color: black;
+		border: 1px solid white;
+	}
+	@media (max-width: 700px) {
+		.navbar {
+			font-size: 1.5rem;
+		}
+	}
+
+	.navElement:hover,
+	.navElement:focus {
+		color: white;
+		background-color: rgb(221, 61, 32);
+		outline: none;
+	}
+
+	.navElement {
+		display: -ms-grid;
+		display: grid;
+		-ms-grid-columns: 1fr 9fr;
+		grid-template-columns: 1fr 9fr;
+		cursor: pointer;
+		text-align: left;
+		margin-top: 5px;
+		padding-right: 1em;
+		width: 100%;
+		/* border-bottom: 1px solid rgba(255, 255, 255, 0.15); */
+	}
+
+	.navElementIndicator {
+		visibility: hidden;
+		text-align: right;
+		padding-right: 5px;
+	}
+
+	.navElement:hover > .navElementIndicator,
+	.navElement:focus > .navElementIndicator {
+		visibility: visible;
+	}
+
+	@media screen and (min-width: 1024px) {
+		.onlyMobile {
+			display: none;
+		}
+	}
+
+	.title {
+		height: auto;
+		overflow: hidden;
+		-webkit-transition: ease-in-out;
+		-o-transition: ease-in-out;
+		transition: ease-in-out;
+		border-bottom: 1px solid white;
+		padding-bottom: 3px;
+		color: white;
+		display: -ms-grid;
+		display: grid;
+		-ms-grid-columns: auto 15px;
+		grid-template-columns: auto 15px;
+		text-align: left;
+	}
+
+	.info {
+		text-align: center;
+		cursor: help;
+		/* border-radius: 15px;
+  border: 1px solid white; */
+	}
+
+	.infoData {
+		height: 0;
+		width: 0px;
+		visibility: hidden;
+		-webkit-transition: 0.5s;
+		-o-transition: 0.5s;
+		transition: 0.5s;
+		grid-column-start: 1;
+		-ms-grid-column: 1;
+		grid-column: 1;
+		-ms-grid-column-span: 2;
+		grid-column-end: span 2;
+	}
+
+	.info:hover ~ .infoData {
+		visibility: visible;
+		white-space: nowrap;
+		overflow: hidden;
+		width: 100%;
+		height: calc(8px + 1.3vmin);
+	}
+
+	.info:hover ~ .infoData span {
+		display: inline-block;
+		padding-left: 120%;
+		-webkit-animation-delay: 0.6s;
+		animation-delay: 0.6s;
+		-webkit-animation: marquee 12s linear infinite;
+		animation: marquee 12s linear infinite;
+	}
+
+	.infoData span {
+		padding-left: 120%;
+	}
+
+	@-webkit-keyframes marquee {
+		0% {
+			-webkit-transform: translate(0, 0);
+			transform: translate(0, 0);
+		}
+		100% {
+			-webkit-transform: translate(-100%, 0);
+			transform: translate(-100%, 0);
+		}
+	}
+
+	@keyframes marquee {
+		0% {
+			-webkit-transform: translate(0, 0);
+			transform: translate(0, 0);
+		}
+		100% {
+			-webkit-transform: translate(-100%, 0);
+			transform: translate(-100%, 0);
+		}
+	}
+
+	.pdf {
+		width: 100%;
+		height: 100%;
+	}
+
+	#modalOverlay {
+		background-color: rgba(0, 0, 0, 0.66);
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100vh;
+		width: 100vw;
+
+		-webkit-transition: 0.3s;
+
+		-o-transition: 0.3s;
+
+		transition: 0.3s;
+		visibility: hidden;
+	}
+
+	.modal {
+		text-align: center;
+		color: white;
+		font-family: 'Inconsolata', Consolas, monaco, monospace;
+
+		-webkit-transition: 0.2s, ease, 0.2s;
+
+		-o-transition: 0.2s, ease, 0.2s;
+
+		transition: 0.2s, ease, 0.2s;
+
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		-webkit-transform: translate(-50%, -50%);
+		-ms-transform: translate(-50%, -50%);
+		transform: translate(-50%, -50%);
+
+		height: 0vh;
+		width: 80vw;
+		min-width: 100px;
+		overflow: hidden;
+		z-index: 10;
+
+		border: 2px solid white;
+		-webkit-box-shadow: 0 0 60px 0 rgba(0, 0, 0, 0.66);
+		box-shadow: 0 0 60px 0 rgba(0, 0, 0, 0.66);
+
+		visibility: hidden;
+	}
+
+	.div {
+		/* visibility: hidden; */
+		background-color: black;
+		padding: 15px;
+	}
+
+	.modalHeader {
+		font-size: 1.4em;
+	}
+
+	.smallerText {
+		font-size: 0.85em;
+	}
+
+	#multimediaModal {
+		display: -ms-grid;
+		display: grid;
+		-ms-grid-rows: auto, 15px, auto;
+		grid-template-rows: auto, 15px, auto;
+		text-align: center;
+		color: white;
+		font-family: 'Inconsolata', Consolas, monaco, monospace;
+	}
+
+	#multimediaModal span {
+		-ms-grid-row: 2;
+		grid-row: 2;
+	}
+
+	#contactModal {
+		text-align: center;
+		color: white;
+		font-family: 'Inconsolata', Consolas, monaco, monospace;
+	}
+
+	#aboutMeModal {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.aboutMeContent {
+		text-align: left;
+		max-width: 700px;
+		width: 100%;
+		margin: auto;
+		transition: margin 2s;
+		overflow-y: scroll;
+	}
+
+	@media (max-width: 375px) {
+		.aboutMeContent {
+			font-size: 1rem;
+		}
+	}
+
+	.aboutMeContent > a {
+		font-weight: bold;
+		text-decoration: underline;
+		cursor: pointer;
+	}
+
+	.ti-cursor {
+		mix-blend-mode: difference;
+	}
+
+	:root {
+		--ti-cursor-margin-left: 0em;
+
+		--ti-cursor-margin-right: 0.1em;
+	}
+
+	#arErrorModal {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+</style>
+
+<!-- normalize -->
+<style>
+	/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+
+	/* Document
+   ========================================================================== */
+
+	/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+
+	html {
+		line-height: 1.15; /* 1 */
+		-webkit-text-size-adjust: 100%; /* 2 */
+	}
+
+	/* Sections
+   ========================================================================== */
+
+	/**
+ * Remove the margin in all browsers.
+ */
+
+	body {
+		margin: 0;
+	}
+
+	/**
+ * Render the `main` element consistently in IE.
+ */
+
+	main {
+		display: block;
+	}
+
+	/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+
+	h1 {
+		font-size: 2em;
+		margin: 0.67em 0;
+	}
+
+	/* Grouping content
+   ========================================================================== */
+
+	/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+
+	hr {
+		box-sizing: content-box; /* 1 */
+		height: 0; /* 1 */
+		overflow: visible; /* 2 */
+	}
+
+	/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+
+	pre {
+		font-family: monospace, monospace; /* 1 */
+		font-size: 1em; /* 2 */
+	}
+
+	/* Text-level semantics
+   ========================================================================== */
+
+	/**
+ * Remove the gray background on active links in IE 10.
+ */
+
+	a {
+		background-color: transparent;
+	}
+
+	/**
+ * 1. Remove the bottom border in Chrome 57-
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+
+	abbr[title] {
+		border-bottom: none; /* 1 */
+		text-decoration: underline; /* 2 */
+		text-decoration: underline dotted; /* 2 */
+	}
+
+	/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+
+	b,
+	strong {
+		font-weight: bolder;
+	}
+
+	/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+
+	code,
+	kbd,
+	samp {
+		font-family: monospace, monospace; /* 1 */
+		font-size: 1em; /* 2 */
+	}
+
+	/**
+ * Add the correct font size in all browsers.
+ */
+
+	small {
+		font-size: 80%;
+	}
+
+	/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+
+	sub,
+	sup {
+		font-size: 75%;
+		line-height: 0;
+		position: relative;
+		vertical-align: baseline;
+	}
+
+	sub {
+		bottom: -0.25em;
+	}
+
+	sup {
+		top: -0.5em;
+	}
+
+	/* Embedded content
+   ========================================================================== */
+
+	/**
+ * Remove the border on images inside links in IE 10.
+ */
+
+	img {
+		border-style: none;
+	}
+
+	/* Forms
+   ========================================================================== */
+
+	/**
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ */
+
+	button,
+	input,
+	optgroup,
+	select,
+	textarea {
+		font-family: inherit; /* 1 */
+		font-size: 100%; /* 1 */
+		line-height: 1.15; /* 1 */
+		margin: 0; /* 2 */
+	}
+
+	/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+
+	button,
+	input {
+		/* 1 */
+		overflow: visible;
+	}
+
+	/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+
+	button,
+	select {
+		/* 1 */
+		text-transform: none;
+	}
+
+	/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+
+	button,
+	[type='button'],
+	[type='reset'],
+	[type='submit'] {
+		-webkit-appearance: button;
+	}
+
+	/**
+ * Remove the inner border and padding in Firefox.
+ */
+
+	button::-moz-focus-inner,
+	[type='button']::-moz-focus-inner,
+	[type='reset']::-moz-focus-inner,
+	[type='submit']::-moz-focus-inner {
+		border-style: none;
+		padding: 0;
+	}
+
+	/**
+ * Restore the focus styles unset by the previous rule.
+ */
+
+	button:-moz-focusring,
+	[type='button']:-moz-focusring,
+	[type='reset']:-moz-focusring,
+	[type='submit']:-moz-focusring {
+		outline: 1px dotted ButtonText;
+	}
+
+	/**
+ * Correct the padding in Firefox.
+ */
+
+	fieldset {
+		padding: 0.35em 0.75em 0.625em;
+	}
+
+	/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+
+	legend {
+		box-sizing: border-box; /* 1 */
+		color: inherit; /* 2 */
+		display: table; /* 1 */
+		max-width: 100%; /* 1 */
+		padding: 0; /* 3 */
+		white-space: normal; /* 1 */
+	}
+
+	/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+
+	progress {
+		vertical-align: baseline;
+	}
+
+	/**
+ * Remove the default vertical scrollbar in IE 10+.
+ */
+
+	textarea {
+		overflow: auto;
+	}
+
+	/**
+ * 1. Add the correct box sizing in IE 10.
+ * 2. Remove the padding in IE 10.
+ */
+
+	[type='checkbox'],
+	[type='radio'] {
+		box-sizing: border-box; /* 1 */
+		padding: 0; /* 2 */
+	}
+
+	/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+
+	[type='number']::-webkit-inner-spin-button,
+	[type='number']::-webkit-outer-spin-button {
+		height: auto;
+	}
+
+	/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+
+	[type='search'] {
+		-webkit-appearance: textfield; /* 1 */
+		outline-offset: -2px; /* 2 */
+	}
+
+	/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+
+	[type='search']::-webkit-search-decoration {
+		-webkit-appearance: none;
+	}
+
+	/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+
+	::-webkit-file-upload-button {
+		-webkit-appearance: button; /* 1 */
+		font: inherit; /* 2 */
+	}
+
+	/* Interactive
+   ========================================================================== */
+
+	/*
+ * Add the correct display in Edge, IE 10+, and Firefox.
+ */
+
+	details {
+		display: block;
+	}
+
+	/*
+ * Add the correct display in all browsers.
+ */
+
+	summary {
+		display: list-item;
+	}
+
+	/* Misc
+   ========================================================================== */
+
+	/**
+ * Add the correct display in IE 10+.
+ */
+
+	template {
+		display: none;
+	}
+
+	/**
+ * Add the correct display in IE 10.
+ */
+
+	[hidden] {
+		display: none;
+	}
+</style>
