@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+	color-scheme: dark;
+	@apply bg-stone-800 text-stone-200;
+	font-family: 'DM Sans Variable', sans-serif;
+	font-size: 1.05rem;
+	scroll-behavior: smooth;
+}
+html {
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+
+h1 {
+	font-family: 'DM Mono', sans-serif;
+}
+
+code {
+	@apply bg-stone-900 px-2 text-base;
+}
+
+pre {
+	@apply border border-solid border-orange-800 drop-shadow-xl;
+}
+
+.full-width {
+	margin-left: calc(50% - 50vw);
+	margin-right: calc(50% - 50vw);
+}
+
+.custom-container {
+	@apply m-auto w-full max-w-screen-lg grow px-4;
+}

@@ -1,0 +1,21 @@
+---
+import HeaderLink from './HeaderLink.astro';
+---
+
+<!-- TODO: For mobile show only logo and remove stickyness. Move navigation to bottom -->
+<header class="sticky top-0 mb-8 border-b border-b-orange-800 bg-stone-800 font-mono z-50">
+	<nav class="m-auto flex max-w-screen-lg justify-between px-4 py-2 align-middle">
+		<a href="/">
+			<h2
+				class="my-auto border-b border-transparent py-1 font-light transition hover:border-red-600 hover:after:content-['👋']"
+			>
+				Agustin Jaralampidis | <span class="font-bold">AJARA.DEV</span>
+			</h2>
+		</a>
+
+		<div class="internal-links">
+			<HeaderLink class="my-auto ml-2 py-1" href="/blog">Blog</HeaderLink>
+			<HeaderLink class="my-auto ml-2 py-1" href="/about">About</HeaderLink>
+		</div>
+	</nav>
+</header>

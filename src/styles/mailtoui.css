@@ -1,0 +1,56 @@
+/* This is styling the mailto popup used in about page */
+.mailtoui-modal {
+	background-color: rgba(0, 0, 0, 0.5);
+	color: #e7e5e4;
+	font-family: 'DM Sans Variable';
+}
+
+.mailtoui-modal-head {
+	background-color: #292524;
+}
+
+.mailtoui-modal-title {
+	color: #e7e5e4;
+	font-family: 'DM Mono';
+}
+
+.mailtoui-modal-close:focus,
+.mailtoui-modal-close:hover {
+	color: #e7e5e4;
+}
+
+.mailtoui-modal-body {
+	background-color: #292524;
+}
+
+.mailtoui-button:focus .mailtoui-button-content {
+	background-color: #0c0a09;
+	color: #e7e5e4;
+}
+
+.mailtoui-button-content,
+.mailtoui-button-copy {
+	background-color: #1c1917;
+	color: #e7e5e4;
+}
+
+.mailtoui-button-content:hover,
+.mailtoui-button-content:focus,
+.mailtoui-button-copy:hover,
+.mailtoui-button-copy:focus {
+	background-color: #0c0a09;
+	color: #e7e5e4;
+}
+
+.mailtoui-button-copy-clicked,
+.mailtoui-button-copy-clicked:hover,
+.mailtoui-button-copy-clicked:focus {
+	border: 1px solid #9a3412;
+	background-color: #0c0a09;
+	color: #e7e5e4;
+}
+
+.mailtoui-email-address {
+	background-color: #fafaf9;
+	color: #1c1917;
+}

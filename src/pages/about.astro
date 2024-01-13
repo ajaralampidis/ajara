@@ -1,62 +1,271 @@
 ---
-import Layout from '../layouts/BlogPost.astro';
+import ContainerLayout from '../layouts/ContainerLayout.astro';
 ---
 
-<Layout
-	title="About Me"
-	description="Lorem ipsum dolor sit amet"
-	pubDate={new Date('August 08 2021')}
-	heroImage="/blog-placeholder-about.jpg"
->
-	<p>
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-		labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo
-		viverra. Adipiscing enim eu turpis egestas pretium. Euismod elementum nisi quis eleifend quam
-		adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus
-		et malesuada fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus
-		vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea dictumst quisque
-		sagittis. Integer quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit amet.
-	</p>
+<ContainerLayout>
+	<section>
+		<div class="mx-auto">
+			<div class="flex w-full flex-row justify-between align-top">
+				<h1 class="mb-3 text-5xl font-semibold" transition:name="h1" transition:animate="initial">
+					Agustin Jaralampidis
+				</h1>
+				<div class="flex flex-row gap-4">
+					<a
+						href="https://twitter.com/ajaralampidis"
+						target="_blank"
+						class="no-underline transition hover:text-stone-400"
+					>
+						<span class="sr-only">Follow Me on Twitter</span>
+						<svg
+							class="h-4 w-4"
+							viewBox="0 0 16 16"
+							aria-hidden="true"
+							width="24"
+							height="24"
+							astro-icon="social/twitter"
+							><path
+								fill="currentColor"
+								d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"
+							></path></svg
+						>
+					</a>
+					<a
+						href="https://github.com/ajaralampidis"
+						target="_blank"
+						class="no-underline transition hover:text-stone-400"
+					>
+						<span class="sr-only">Go to Astro's GitHub repo</span>
+						<svg
+							class="h-4 w-4"
+							viewBox="0 0 16 16"
+							aria-hidden="true"
+							width="24"
+							height="24"
+							astro-icon="social/github"
+							><path
+								fill="currentColor"
+								d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"
+							></path></svg
+						>
+					</a>
+					<a
+						href="https://linkedin.com/in/ajaralampidis"
+						target="_blank"
+						class="no-underline transition hover:text-stone-400"
+					>
+						<span class="sr-only">Follow Me on Linked In</span>
+						<svg
+							class="h-4 w-4"
+							xmlns="http://www.w3.org/2000/svg"
+							width="24"
+							height="24"
+							viewBox="0 0 32 32"
+							><path
+								fill="currentColor"
+								d="M27.26 27.271h-4.733v-7.427c0-1.771-.037-4.047-2.475-4.047c-2.468 0-2.844 1.921-2.844 3.916v7.557h-4.739V11.999h4.552v2.083h.061c.636-1.203 2.183-2.468 4.491-2.468c4.801 0 5.692 3.161 5.692 7.271v8.385zM7.115 9.912a2.75 2.75 0 0 1-2.751-2.756a2.753 2.753 0 1 1 2.751 2.756m2.374 17.359H4.74V12h4.749zM29.636 0H2.36C1.057 0 0 1.031 0 2.307v27.387c0 1.276 1.057 2.307 2.36 2.307h27.271c1.301 0 2.369-1.031 2.369-2.307V2.307C32 1.031 30.932 0 29.631 0z"
+							></path></svg
+						>
+					</a>
 
-	<p>
-		Morbi tristique senectus et netus. Id semper risus in hendrerit gravida rutrum quisque non
-		tellus. Habitasse platea dictumst quisque sagittis purus sit amet. Tellus molestie nunc non
-		blandit massa. Cursus vitae congue mauris rhoncus. Accumsan tortor posuere ac ut. Fringilla urna
-		porttitor rhoncus dolor. Elit ullamcorper dignissim cras tincidunt lobortis. In cursus turpis
-		massa tincidunt dui ut ornare lectus. Integer feugiat scelerisque varius morbi enim nunc.
-		Bibendum neque egestas congue quisque egestas diam. Cras ornare arcu dui vivamus arcu felis
-		bibendum. Dignissim suspendisse in est ante in nibh mauris. Sed tempus urna et pharetra pharetra
-		massa massa ultricies mi.
-	</p>
+					<a
+						href="https://www.instagram.com/agustin_jaralampidis/"
+						target="_blank"
+						class="no-underline transition hover:text-stone-400"
+					>
+						<span class="sr-only">Follow Me on Instagram</span>
+						<svg
+							class="h-4 w-4"
+							xmlns="http://www.w3.org/2000/svg"
+							width="24"
+							height="24"
+							viewBox="0 0 16 16"
+							><path fill="currentColor" d="M7.5 5a2.5 2.5 0 1 0 0 5a2.5 2.5 0 0 0 0-5"></path><path
+								fill="currentColor"
+								fill-rule="evenodd"
+								d="M4.5 0A4.5 4.5 0 0 0 0 4.5v6A4.5 4.5 0 0 0 4.5 15h6a4.5 4.5 0 0 0 4.5-4.5v-6A4.5 4.5 0 0 0 10.5 0zM4 7.5a3.5 3.5 0 1 1 7 0a3.5 3.5 0 0 1-7 0M11 4h1V3h-1z"
+								clip-rule="evenodd"></path></svg
+						>
+					</a>
+				</div>
+			</div>
+			<p class="font-mono text-3xl">Front-end Developer</p>
+			<p class="mt-4">
+				Three years of web programming expertise and UI/UX design insights. Crafting user-centric,
+				functional web solutions for your success! ✨
+				<span class="italic text-stone-500">
+					— Designer once, Developer now. What matters is to get things done. ᕙ(⇀‸↼‶)ᕗ
+				</span>
+			</p>
+			<p class="mt-6">
+				<a
+					href="/assets/cv/Agustin Jaralampidis - CV.pdf"
+					download
+					class="rounded-sm border border-stone-600 px-2 py-1 transition hover:border-stone-300"
+				>
+					Download my resume<svg
+						class="inline pb-1"
+						xmlns="http://www.w3.org/2000/svg"
+						width="25"
+						height="25"
+						viewBox="0 0 24 24"
+						><path
+							fill="currentColor"
+							d="m12 16l-5-5l1.4-1.45l2.6 2.6V4h2v8.15l2.6-2.6L17 11zm-6 4q-.825 0-1.412-.587T4 18v-3h2v3h12v-3h2v3q0 .825-.587 1.413T18 20z"
+						></path></svg
+					></a
+				>
+				— or —
+				<a
+					href="mailto:ajaralampidis@gmail.com"
+					class="mailtoui rounded-sm border border-stone-600 px-2 py-1 transition hover:border-stone-300"
+					>Contact Me
+					<svg
+						class="inline pb-1"
+						xmlns="http://www.w3.org/2000/svg"
+						width="23"
+						height="23"
+						viewBox="0 0 24 24"
+						><path
+							fill="currentColor"
+							d="M4 20q-.825 0-1.412-.587T2 18V6q0-.825.588-1.412T4 4h16q.825 0 1.413.588T22 6v12q0 .825-.587 1.413T20 20zm8-7L4 8v10h16V8zm0-2l8-5H4zM4 8V6v12z"
+						></path></svg
+					>
+				</a>
+			</p>
+		</div>
+		<hr class="my-9 border-stone-600" />
 
-	<p>
-		Mollis nunc sed id semper risus in. Convallis a cras semper auctor neque. Diam sit amet nisl
-		suscipit. Lacus viverra vitae congue eu consequat ac felis donec. Egestas integer eget aliquet
-		nibh praesent tristique magna sit amet. Eget magna fermentum iaculis eu non diam. In vitae
-		turpis massa sed elementum. Tristique et egestas quis ipsum suspendisse ultrices. Eget lorem
-		dolor sed viverra ipsum. Vel turpis nunc eget lorem dolor sed viverra. Posuere ac ut consequat
-		semper viverra nam. Laoreet suspendisse interdum consectetur libero id faucibus. Diam phasellus
-		vestibulum lorem sed risus ultricies tristique. Rhoncus dolor purus non enim praesent elementum
-		facilisis. Ultrices tincidunt arcu non sodales neque. Tempus egestas sed sed risus pretium quam
-		vulputate. Viverra suspendisse potenti nullam ac tortor vitae purus faucibus ornare. Fringilla
-		urna porttitor rhoncus dolor purus non. Amet dictum sit amet justo donec enim.
-	</p>
+		<!-- Work Experience Section -->
+		<section class="mb-8">
+			<h2 class="font-mono text-3xl font-semibold">Experience</h2>
+			<div>
+				<!-- Work experience details can be added here -->
+				<div class="mt-8">
+					<h3 class="text-xl font-medium">Lead Front-end Developer</h3>
+					<p>We Go GreenR</p>
+					<p class="text-sm text-stone-400">July 2022 - Present</p>
+					<p class="mt-2">— Tasks:</p>
+					<ul class="list-inside list-disc">
+						<li>Front-end Development</li>
+						<li>Refactor and update legacy code</li>
+						<li>Implement automated testing</li>
+						<li>Code Review and QA</li>
+						<li>UI UX Design</li>
+						<li>Project Management</li>
+						<li>SCRUM Master</li>
+					</ul>
+					<p class="mt-2">— Technologies used:</p>
+					<ul class="list-inside list-disc">
+						<li>Next, Typescript, Redux, Tailwind, Emotion, AWS, PHP, Jira</li>
+					</ul>
+				</div>
 
-	<p>
-		Mattis ullamcorper velit sed ullamcorper morbi tincidunt. Tortor posuere ac ut consequat semper
-		viverra. Tellus mauris a diam maecenas sed enim ut sem viverra. Venenatis urna cursus eget nunc
-		scelerisque viverra mauris in. Arcu ac tortor dignissim convallis aenean et tortor at. Curabitur
-		gravida arcu ac tortor dignissim convallis aenean et tortor. Egestas tellus rutrum tellus
-		pellentesque eu. Fusce ut placerat orci nulla pellentesque dignissim enim sit amet. Ut enim
-		blandit volutpat maecenas volutpat blandit aliquam etiam. Id donec ultrices tincidunt arcu. Id
-		cursus metus aliquam eleifend mi.
-	</p>
+				<div class="mt-8">
+					<h3 class="text-xl font-medium">Front-end Developer (Freelance)</h3>
+					<p>Aves Argentinas</p>
+					<p class="text-sm text-stone-400">September 2022 - November 2022</p>
+					<p class="mt-2">— Tasks:</p>
+					<ul class="list-inside list-disc">
+						<li>Front-end Development of kbadeargentina.org</li>
+						<li>Project management, requirement gathering, and task estimation</li>
+						<li>Design Review</li>
+						<li>Deployment through Vercel</li>
+					</ul>
+					<p class="mt-2">— Technologies used:</p>
+					<ul class="list-inside list-disc">
+						<li>Next, Typescript, Styled-Components, OpenLayers, Vercel, Trello</li>
+					</ul>
+				</div>
 
-	<p>
-		Tempus quam pellentesque nec nam aliquam sem. Risus at ultrices mi tempus imperdiet. Id porta
-		nibh venenatis cras sed felis eget velit. Ipsum a arcu cursus vitae. Facilisis magna etiam
-		tempor orci eu lobortis elementum. Tincidunt dui ut ornare lectus sit. Quisque non tellus orci
-		ac. Blandit libero volutpat sed cras. Nec tincidunt praesent semper feugiat nibh sed pulvinar
-		proin gravida. Egestas integer eget aliquet nibh praesent tristique magna.
-	</p>
-</Layout>
+				<div class="mt-8">
+					<h3 class="text-xl font-medium">Front-end Developer</h3>
+					<p>We Are PSh</p>
+					<p class="text-sm text-stone-400">November 2020 - July 2022</p>
+					<p class="mt-2">— Tasks:</p>
+					<ul class="list-inside list-disc">
+						<li>Full-stack development for marketing sites and blogs</li>
+						<li>Mentored Junior developers</li>
+						<li>Code review</li>
+					</ul>
+					<p class="mt-2">— Technologies used:</p>
+					<ul class="list-inside list-disc">
+						<li>React, Typescript, Gatsby, 11ty, Next, JQuery, Lottie, Strapi, ClickUp</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+
+		<hr class="my-9 border-stone-600" />
+
+		<!-- Education Section -->
+		<section class="mb-8">
+			<h2 class="font-mono text-3xl font-semibold">Education</h2>
+
+			<div>
+				<!-- Education details can be added here -->
+				<div class="mt-4">
+					<h3 class="text-xl font-medium">Full Stack Web Development</h3>
+					<p>HENRY Bootcamp</p>
+					<p class="text-sm text-stone-400">2020</p>
+				</div>
+				<div class="mt-4">
+					<h3 class="text-xl font-medium">Industrial Design Bachelor</h3>
+					<p>FADU, Universidad de Buenos Aires (UBA)</p>
+					<p class="text-sm text-stone-400">2021</p>
+				</div>
+				<div class="mt-4">
+					<h3 class="text-xl font-medium">B2 First, Cambridge English FCE</h3>
+					<p>Cambridge English Language Assessment</p>
+					<p class="text-sm text-stone-400">2014</p>
+				</div>
+			</div>
+		</section>
+
+		<hr class="my-9 border-stone-600" />
+
+		<!-- Skills Section -->
+		<section class="mb-8">
+			<h2 class="font-mono text-3xl font-semibold">Skills</h2>
+
+			<div class="flex flex-row">
+				<!-- Skills can be listed here -->
+				<ul class="mt-4 list-inside list-disc pr-12">
+					<li>HTML, CSS & JavaScript</li>
+					<li>TypeScript</li>
+					<li>Next</li>
+					<li>React</li>
+					<li>Redux</li>
+				</ul>
+				<ul class="mt-4 list-disc">
+					<li>Express</li>
+					<li>SQL</li>
+					<li>GIT</li>
+					<li>SCRUM</li>
+					<li>Figma</li>
+				</ul>
+			</div>
+		</section>
+		<hr class="my-9 border-stone-600" />
+
+		<!-- Languages Section -->
+		<section>
+			<h2 class="font-mono text-3xl font-semibold">Languages</h2>
+
+			<div class="flex flex-row gap-12">
+				<div class="mt-4">
+					<h3 class="text-xl font-medium">English</h3>
+					<p>Proficiency: Advanced</p>
+				</div>
+
+				<div class="mt-4">
+					<h3 class="text-xl font-medium">Spanish</h3>
+					<p>Proficiency: Native</p>
+				</div>
+			</div>
+		</section>
+	</section>
+
+	<script
+		data-options='{ "title": "Send me an Email" }'
+		src="https://cdn.jsdelivr.net/npm/mailtoui@1.0.3/dist/mailtoui-min.js"></script>
+</ContainerLayout>
