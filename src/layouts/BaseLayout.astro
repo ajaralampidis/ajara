@@ -25,7 +25,7 @@ const { title, description, image } = Astro.props;
 			transition:name="head"
 		/>
 	</head>
-	<body class="min-h-screen flex flex-col">
+	<body class="flex min-h-screen flex-col pt-4 max-md:pb-24 md:pt-0">
 		<Header transition:persist transition:name="header" />
 		<slot />
 		<Footer transition:persist transition:name="footer" />

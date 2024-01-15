@@ -5,11 +5,15 @@ import ContainerLayout from '../layouts/ContainerLayout.astro';
 <ContainerLayout>
 	<section>
 		<div class="mx-auto">
-			<div class="flex w-full flex-row justify-between align-top">
-				<h1 class="mb-3 text-5xl font-semibold" transition:name="h1" transition:animate="initial">
+			<div class="flex w-full flex-col-reverse justify-between align-top lg:flex-row">
+				<h1
+					class="mb-3 text-3xl font-semibold md:text-5xl"
+					transition:name="h1"
+					transition:animate="initial"
+				>
 					Agustin Jaralampidis
 				</h1>
-				<div class="flex flex-row gap-4">
+				<div class="mb-2 flex flex-row gap-4">
 					<a
 						href="https://twitter.com/ajaralampidis"
 						target="_blank"
@@ -88,7 +92,7 @@ import ContainerLayout from '../layouts/ContainerLayout.astro';
 					</a>
 				</div>
 			</div>
-			<p class="font-mono text-3xl">Front-end Developer</p>
+			<p class="font-mono text-xl md:text-3xl">Front-end Developer</p>
 			<p class="mt-4">
 				Three years of web programming expertise and UI/UX design insights. Crafting user-centric,
 				functional web solutions for your success! ✨
@@ -96,11 +100,11 @@ import ContainerLayout from '../layouts/ContainerLayout.astro';
 					— Designer once, Developer now. What matters is to get things done. ᕙ(⇀‸↼‶)ᕗ
 				</span>
 			</p>
-			<p class="mt-6">
+			<p class="mt-6 flex flex-col gap-2 md:block">
 				<a
 					href="/assets/cv/Agustin Jaralampidis - CV.pdf"
 					download
-					class="rounded-sm border border-stone-600 px-2 py-1 transition hover:border-stone-300"
+					class="w-fit rounded-sm border border-stone-600 px-2 py-1 transition hover:border-stone-300"
 				>
 					Download my resume<svg
 						class="inline pb-1"
@@ -114,10 +118,10 @@ import ContainerLayout from '../layouts/ContainerLayout.astro';
 						></path></svg
 					></a
 				>
-				— or —
+				<span class="hidden md:inline">— or —</span>
 				<a
 					href="mailto:ajaralampidis@gmail.com"
-					class="mailtoui rounded-sm border border-stone-600 px-2 py-1 transition hover:border-stone-300"
+					class="mailtoui w-fit rounded-sm border border-stone-600 px-2 py-1 transition hover:border-stone-300"
 					>Contact Me
 					<svg
 						class="inline pb-1"

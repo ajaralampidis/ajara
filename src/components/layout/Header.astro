@@ -1,21 +1,39 @@
 ---
 import HeaderLink from './HeaderLink.astro';
+
+const { pathname } = Astro.url;
+const isHomepage = pathname === '/';
 ---
 
 <!-- TODO: For mobile show only logo and remove stickyness. Move navigation to bottom -->
-<header class="sticky top-0 mb-8 border-b border-b-orange-800 bg-stone-800 font-mono z-50">
+<header
+	class="sticky top-0 z-50 mb-8 hidden border-b border-b-orange-800 bg-stone-800 font-mono md:block"
+>
 	<nav class="m-auto flex max-w-screen-lg justify-between px-4 py-2 align-middle">
 		<a href="/">
 			<h2
 				class="my-auto border-b border-transparent py-1 font-light transition hover:border-red-600 hover:after:content-['👋']"
 			>
-				Agustin Jaralampidis | <span class="font-bold">AJARA.DEV</span>
+				Agustin Jaralampidis <span class="border-l border-stone-300 pl-2 font-bold">
+					AJARA.DEV</span
+				>
 			</h2>
 		</a>
 
-		<div class="internal-links">
+		<div>
 			<HeaderLink class="my-auto ml-2 py-1" href="/blog">Blog</HeaderLink>
 			<HeaderLink class="my-auto ml-2 py-1" href="/about">About</HeaderLink>
 		</div>
 	</nav>
 </header>
+
+<nav
+	class:list={[
+		'fixed bottom-0 z-50 h-fit w-full border-t border-t-orange-800 bg-stone-800 py-2 text-center font-mono md:hidden',
+		[isHomepage && 'hidden'],
+	]}
+>
+	<HeaderLink class="my-auto ml-2 py-1" href="/">Home</HeaderLink>
+	<HeaderLink class="my-auto ml-2 py-1" href="/blog">Blog</HeaderLink>
+	<HeaderLink class="my-auto ml-2 py-1" href="/about">About</HeaderLink>
+</nav>

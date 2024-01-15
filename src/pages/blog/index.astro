@@ -22,8 +22,8 @@ const posts = (await getCollection('blog')).sort(
 					<li class="py-2 transition hover:bg-stone-900">
 						<a href={`/blog/${post.slug}/`}>
 							<div class="flex flex-row justify-between align-top">
-								<h3 class="font-mono text-2xl white">{post.data.title}</h3>
-								<p class="text-xs text-stone-400">
+								<h3 class="white font-mono text-2xl">{post.data.title}</h3>
+								<p class="min-w-fit pl-1 text-xs text-stone-400">
 									<FormattedDate date={post.data.pubDate} />
 								</p>
 							</div>

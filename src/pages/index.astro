@@ -6,28 +6,32 @@ import ProfilePic from '../assets/home/perfil.jpg';
 ---
 
 <BaseLayout>
-	<div class="bg-orange-700 -mt-12 grow custom-bg">
+	<div class="custom-bg mt-0 h-full min-h-screen grow bg-orange-700 md:-mt-8 md:min-h-[unset]">
 		<div class="mx-auto block w-fit">
 			<Cube />
 		</div>
-		<div class="text-center -mt-20 w-screen absolute bottom-0 h-[64vh]">
+		<div
+			class="profile-small-height relative mx-auto -mt-12 aspect-[614/703] h-[65vh] max-w-full overflow-hidden"
+		>
 			<Image
-				class="mix-blend-multiply mx-auto w-auto h-full"
+				class="absolute bottom-0 left-1/2 aspect-[614/703] h-full -translate-x-1/2 transform object-cover mix-blend-multiply"
 				src={ProfilePic}
-				alt="A pictor of me looking up (to the 3D cube)"
+				alt="A picture of me looking up (to the 3D cube)"
 			/>
 		</div>
-		<nav class="flex flex-col w-fit m-auto relative mt-[33vh] font-mono mb-4">
+		<nav
+			class="nav-small-height absolute bottom-4 left-1/2 m-auto mb-4 flex w-max -translate-x-1/2 transform flex-col font-mono md:bottom-20"
+		>
 			<a
 				href="/blog"
-				class="before:content-['>_'] hover:bg-orange-700 px-1 focus:bg-orange-700 transition"
+				class="px-1 transition before:content-['>_'] hover:bg-orange-700 focus:bg-orange-700"
 				id="aboutMe"
 				>Blog
 			</a>
 
 			<a
 				href="/about"
-				class="before:content-['>_'] hover:bg-orange-700 px-1 focus:bg-orange-700 transition"
+				class="px-1 transition before:content-['>_'] hover:bg-orange-700 focus:bg-orange-700"
 				id="aboutMe"
 			>
 				About</a
@@ -35,7 +39,7 @@ import ProfilePic from '../assets/home/perfil.jpg';
 
 			<a
 				href="/assets/cv"
-				class="before:content-['>_'] hover:bg-orange-700 px-1 focus:bg-orange-700 transition"
+				class="px-1 transition before:content-['>_'] hover:bg-orange-700 focus:bg-orange-700"
 				download
 				class="navElement"
 				id="webDevCV"
@@ -54,7 +58,9 @@ import ProfilePic from '../assets/home/perfil.jpg';
 			</a>
 
 			<button
-				class="before:content-['>_'] hover:bg-orange-700 px-1 focus:bg-orange-700 transition block md:hidden"
+				class:list={[
+					"md:hidden! block px-1 transition before:content-['>_'] hover:bg-orange-700 focus:bg-orange-700",
+				]}
 				id="arButton"
 				tabindex="0"
 				title="Only for devices that supports AR"
@@ -63,7 +69,27 @@ import ProfilePic from '../assets/home/perfil.jpg';
 			</button>
 		</nav>
 	</div>
+	<script>
+		// This is a hotfix. I didn't want to install and import if I am using a CDN
+		interface mv extends HTMLElement {
+			activateAR: () => void;
+		}
+
+		// modelViewer.canActivateAR still not working :(
+		// Keep looking at the docs untill we have a better method to detect AR capable hardware
+
+		const modelViewer = document.querySelector('model-viewer') as mv;
+		const button = document.querySelector('button#arButton');
+		button &&
+			button.addEventListener('click', () => {
+				modelViewer.activateAR();
+			});
+	</script>
+
 	<style>
+		body {
+			padding-bottom: 0 !important;
+		}
 		@media screen and (min-width: 1024px) {
 			.onlyMobile {
 				display: none;
@@ -73,9 +99,24 @@ import ProfilePic from '../assets/home/perfil.jpg';
 			background: radial-gradient(
 				circle,
 				rgba(234, 88, 12, var(--tw-bg-opacity)) 7%,
-				rgb(194, 65, 12, var(--tw-bg-opacity)) 25%,
+				rgb(194, 65, 12, var(--tw-bg-opacity)) 30%,
 				rgba(41, 37, 36, var(--tw-bg-opacity)) 90%
 			);
+		}
+
+		@media screen and (max-height: 700px) {
+			.nav-small-height {
+				background-color: black;
+				border: 1px solid white;
+				padding: 0.5em;
+				position: static;
+				margin: 0 auto 2em auto;
+				transform: none;
+			}
+
+			.profile-small-height {
+				display: none;
+			}
 		}
 	</style>
 </BaseLayout>
