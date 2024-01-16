@@ -15,7 +15,11 @@ const isActive = href !== '/' && href && pathname.includes(String(href));
 		className,
 		'inline-block transition',
 		'border-b',
-		[isActive ? 'border-red-600 font-bold' : 'border-transparent font-light'],
+		[
+			isActive
+				? 'border-red-600 font-bold text-white'
+				: 'border-transparent font-light text-stone-400',
+		],
 		'hover:border-red-600',
 	]}
 	{...props}

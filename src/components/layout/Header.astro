@@ -29,11 +29,45 @@ const isHomepage = pathname === '/';
 
 <nav
 	class:list={[
-		'fixed bottom-0 z-50 h-fit w-full border-t border-t-orange-800 bg-stone-800 py-2 text-center font-mono md:hidden',
+		'fixed bottom-0 z-50 flex h-fit w-full justify-around border-t border-t-orange-800 bg-stone-800 py-2 text-center font-mono shadow-[#1c1917_0_0px_10px_0] md:hidden',
 		[isHomepage && 'hidden'],
 	]}
 >
-	<HeaderLink class="my-auto ml-2 py-1" href="/">Home</HeaderLink>
-	<HeaderLink class="my-auto ml-2 py-1" href="/blog">Blog</HeaderLink>
-	<HeaderLink class="my-auto ml-2 py-1" href="/about">About</HeaderLink>
+	<HeaderLink class="my-auto ml-2 inline-flex flex-col py-1 text-center text-sm" href="/">
+		<svg
+			class="m-auto"
+			xmlns="http://www.w3.org/2000/svg"
+			width="24"
+			height="24"
+			viewBox="0 0 24 24"><path fill="currentColor" d="M4 21V9l8-6l8 6v12h-6v-7h-4v7z"></path></svg
+		>
+		Home
+	</HeaderLink>
+	<HeaderLink class="my-auto ml-2 inline-flex flex-col py-1 text-center text-sm" href="/blog">
+		<svg
+			class="m-auto"
+			xmlns="http://www.w3.org/2000/svg"
+			width="24"
+			height="24"
+			viewBox="0 0 256 256"
+			><path
+				fill="currentColor"
+				d="M216 32v160a8 8 0 0 1-8 8H72a16 16 0 0 0-16 16h136a8 8 0 0 1 0 16H48a8 8 0 0 1-8-8V56a32 32 0 0 1 32-32h136a8 8 0 0 1 8 8"
+			></path></svg
+		>
+		Blog
+	</HeaderLink>
+	<HeaderLink class="my-auto ml-2 inline-flex flex-col py-1 text-center text-sm" href="/about">
+		<svg
+			class="m-auto"
+			xmlns="http://www.w3.org/2000/svg"
+			width="24"
+			height="24"
+			viewBox="0 0 16 16"
+			><path
+				fill="currentColor"
+				d="M3 14s-1 0-1-1s1-4 6-4s6 3 6 4s-1 1-1 1zm5-6a3 3 0 1 0 0-6a3 3 0 0 0 0 6"></path></svg
+		>
+		About
+	</HeaderLink>
 </nav>

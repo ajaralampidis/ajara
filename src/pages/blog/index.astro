@@ -9,7 +9,11 @@ const posts = (await getCollection('blog')).sort(
 ---
 
 <ContainerLayout>
-	<h1 class="mb-3 text-5xl font-semibold" transition:name="h1" transition:animate="initial">
+	<h1
+		class="mb-3 text-4xl font-semibold md:text-5xl"
+		transition:name="h1"
+		transition:animate="initial"
+	>
 		Blog
 	</h1>
 	<p class="mb-6">
@@ -19,10 +23,10 @@ const posts = (await getCollection('blog')).sort(
 		<ul class="divide-y divide-stone-700 border-y border-stone-700">
 			{
 				posts.map((post) => (
-					<li class="py-2 transition hover:bg-stone-900">
+					<li class="py-4 transition hover:bg-stone-900">
 						<a href={`/blog/${post.slug}/`}>
-							<div class="flex flex-row justify-between align-top">
-								<h3 class="white font-mono text-2xl">{post.data.title}</h3>
+							<div class="flex flex-row items-center justify-between">
+								<h3 class="white font-mono text-xl md:text-2xl">{post.data.title}</h3>
 								<p class="min-w-fit pl-1 text-xs text-stone-400">
 									<FormattedDate date={post.data.pubDate} />
 								</p>
