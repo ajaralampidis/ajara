@@ -10,7 +10,7 @@ const { title, pubDate, updatedDate, heroImage, description } = Astro.props;
 
 <ContainerLayout>
 	<a
-		class="text-sm text-stone-500 mb-3 hover:-translate-x-1 hover:text-stone-100 transition block"
+		class="mb-3 block text-sm text-stone-500 transition hover:-translate-x-1 hover:text-stone-100"
 		href="/blog"
 	>
 		<svg
@@ -28,13 +28,13 @@ const { title, pubDate, updatedDate, heroImage, description } = Astro.props;
 	</a>
 	{heroImage && <img class="mb-12" width={1020} height={510} src={heroImage} alt="" />}
 	<article
-		class="m-auto prose prose-stone prose-invert prose-headings:font-mono prose-h1:font-bold prose-lg"
+		class="prose prose prose-stone prose-invert m-auto prose-headings:font-mono prose-h1:mt-20 prose-h1:font-bold"
 	>
 		<h1 class="mb-6" transition:name="h1">{title}</h1>
-		<p class="text-xl text-stone-400 my-6">
+		<p class="my-6 text-xl text-stone-400">
 			{description}
 		</p>
-		<p class="text-sm text-stone-200 font-light">
+		<p class="text-sm font-light text-stone-200">
 			<FormattedDate date={pubDate} />
 			{
 				updatedDate && (
