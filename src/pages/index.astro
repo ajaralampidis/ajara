@@ -6,7 +6,9 @@ import ProfilePic from '../assets/home/perfil.jpg';
 ---
 
 <BaseLayout>
-	<div class="custom-bg mt-0 h-full min-h-screen grow bg-orange-700 md:-mt-8 md:min-h-[unset]">
+	<div
+		class="custom-bg mb-[unset] mt-0 h-full min-h-screen grow bg-orange-700 md:-mb-12 md:-mt-8 md:min-h-[unset]"
+	>
 		<div class="mx-auto block w-fit">
 			<Cube />
 		</div>
@@ -16,11 +18,11 @@ import ProfilePic from '../assets/home/perfil.jpg';
 			<Image
 				class="absolute bottom-0 left-1/2 aspect-[614/703] h-full -translate-x-1/2 transform object-cover mix-blend-multiply"
 				src={ProfilePic}
-				alt="A picture of me looking up (to the 3D cube)"
+				alt="Me looking up (to the 3D cube)"
 			/>
 		</div>
 		<nav
-			class="nav-small-height absolute bottom-4 left-1/2 m-auto mb-4 flex w-max -translate-x-1/2 transform flex-col font-mono md:bottom-20"
+			class="nav-small-height absolute bottom-12 left-1/2 m-auto mb-4 flex w-max -translate-x-1/2 transform flex-col font-mono md:bottom-20"
 		>
 			<a
 				href="/blog"
@@ -38,7 +40,7 @@ import ProfilePic from '../assets/home/perfil.jpg';
 			>
 
 			<a
-				href="/assets/cv"
+				href="/assets/cv/agustin_jaralampidis_cv.pdf"
 				class="px-1 transition before:content-['>_'] hover:bg-orange-700 focus:bg-orange-700"
 				download
 				class="navElement"
@@ -59,7 +61,7 @@ import ProfilePic from '../assets/home/perfil.jpg';
 
 			<button
 				class:list={[
-					"md:hidden! block px-1 transition before:content-['>_'] hover:bg-orange-700 focus:bg-orange-700",
+					"block px-1 transition before:content-['>_'] hover:bg-orange-700 focus:bg-orange-700 md:hidden",
 				]}
 				id="arButton"
 				tabindex="0"
