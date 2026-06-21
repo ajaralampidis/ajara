@@ -65,15 +65,12 @@ We are going to allow ssh connections to our machine, and we are going to setup 
 - Then you need to start the service. `systemctl start sshd` will start your service but we can also use `systemctl enable sshd` so that is starts when we power-on our machine.
   - To better understand what we are doing you need to know that systemctl is the CLI that most Linux distros uses to manage the systemd system and service manager. You can google that if you need to.
 - Once we have our ssh server running _(you can check that with `sudo systemctl status sshd` and see that it is active)_, you will be able to connect from other device using: ssh@[username][yourserevr IP address]
-
   - username → is the linux user you want to connect as. (It will probably ask you for the user's password to allow the connection)
   - yourserevr IP address → its your localhost IP address. (You can find it using `ifconfig` and looking for the number that starts with 192.168...)
   - You will be able to connect through your local network. Connecting from anywhere else would require us to configure our internet router to allow that. _(This way is safer and I have never found the need for remote access yet)_.
 
 - Now our ssh server is working but we can improve safety by allowing connections only with ssh keys, and disallowing connections with password.
-
   - For this we will create an ssh key `ssh-keygen` this will create two files in our `~/.ssh/` directory. The one ending with .pub is the public one and we are going to copy its contents in `~/.ssh/authorized_keys` file. This file is used by default by our ssh server to validate connections via ssh keys. And then we'll need to copy our private key into our phone. _(We could also make the key directly in our phone using passwordstore and then copying the contents of the .pub key in our pc)_
-
     - _Btw, ssh keys works very similar to GPG keys, but they are simpler and the keys are stored as simple files. Usually saved in `~/.ssh/` directory._
 
   - Disallowing password connections is as simple as editing the file: `/etc/ssh/sshd_config` and changing PasswordAuthentication yes to no.
